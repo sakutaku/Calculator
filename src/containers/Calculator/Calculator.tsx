@@ -2,7 +2,7 @@ import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../app/store";
 import './Calculator.css';
-import {press} from "./CalculatorSlice";
+import {deleteValue, press} from "./CalculatorSlice";
 
 const Calculator = () => {
     const dispatch = useDispatch();
@@ -28,10 +28,16 @@ const Calculator = () => {
                 <div className="calculator-nums" onClick={() => dispatch(press('1'))}>1</div>
                 <div className="calculator-nums" onClick={() => dispatch(press('2'))}>2</div>
                 <div className="calculator-nums" onClick={() => dispatch(press('3'))}>3</div>
-                <div className="calculator-nums">{"<"}</div>
+                <div className="calculator-nums-empty">
+                    <div className="calculator-delete" onClick={() => dispatch(deleteValue())}>{"<"}</div>
+                </div>
                 <div className="calculator-nums" onClick={() => dispatch(press('0'))}>0</div>
-                <div className="calculator-nums">E</div>
+                <div className="calculator-nums-empty">
+                    <div className="calculator-check">E</div>
+                </div>
             </div>
+
+
         </div>
     );
 };
