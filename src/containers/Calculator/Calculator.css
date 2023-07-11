@@ -1,0 +1,17 @@
+.calculator-window{
+    width: 274px;
+    height: 40px;
+    border: 1px solid gray;
+}
+.calculator-nums-wrap{
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.calculator-nums {
+    width: 90px;
+    font-size: 30px;
+    border: 1px solid black;
+    text-align: center;
+    cursor: pointer;
+}
