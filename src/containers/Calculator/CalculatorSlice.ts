@@ -27,11 +27,6 @@ export const CalculatorSlice = createSlice({
             if(state.checked) {
                 state.secondValue = Number(state.value);
             }
-            // if(state.value.length > 4) {
-            //     alert('Stop entering, only 4 numbers!');
-            //     state.value = '';
-            //     return;
-            // }
         },
         deleteValue: (state) => {
             let newState: string = ''
@@ -39,12 +34,6 @@ export const CalculatorSlice = createSlice({
                 newState = state.value.slice(0, -1);
                 state.value = newState;
             }
-
-            // state.value = '';
-            // state.firstValue = 0;
-            // state.secondValue = 0;
-            // state.checked = false;
-            // state.mathematics = '';
         },
         checkValue: (state) => {
             if(state.mathematics === '%') {
