@@ -1,9 +1,8 @@
 import React from 'react';
-import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../app/store";
+import {useDispatch, useSelector} from "react-redux";
+import {checkValue, deleteValue, press} from "./CalculatorSlice";
 import './Calculator.css';
-import {deleteValue, press} from "./CalculatorSlice";
-
 const Calculator = () => {
     const dispatch = useDispatch();
     const calculatorValue = useSelector((state: RootState) => state.calculator.value);
@@ -33,11 +32,9 @@ const Calculator = () => {
                 </div>
                 <div className="calculator-nums" onClick={() => dispatch(press('0'))}>0</div>
                 <div className="calculator-nums-empty">
-                    <div className="calculator-check">E</div>
+                    <div className="calculator-check" onClick={() => dispatch(checkValue())}>E</div>
                 </div>
             </div>
-
-
         </div>
     );
 };

@@ -2,11 +2,15 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 interface CalculatorState {
     value: string;
+    checked: boolean;
 }
 
 const initialState: CalculatorState = {
     value: '',
+    checked: false,
 };
+
+const password = '3322';
 
 export const CalculatorSlice = createSlice({
     name: 'calculator',
@@ -16,7 +20,7 @@ export const CalculatorSlice = createSlice({
             state.value += action.payload;
 
             if(state.value.length > 4) {
-                alert('stop');
+                alert('Stop entering, only 4 numbers!');
                 state.value = '';
                 return;
             }
@@ -28,8 +32,18 @@ export const CalculatorSlice = createSlice({
                 state.value = newState;
             }
         },
+        checkValue: (state) => {
+            if(state.value === password) {
+                document.body.style.backgroundColor = 'green';
+                alert('Access Granted!');
+
+            } else {
+                document.body.style.backgroundColor = 'red';
+                alert('Access Denied!');
+            }
+        }
     }
 });
 
 export const calculatorReducer = CalculatorSlice.reducer;
-export const {press, deleteValue} = CalculatorSlice.actions;
+export const {press, deleteValue, checkValue} = CalculatorSlice.actions;
