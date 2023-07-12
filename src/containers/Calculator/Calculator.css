@@ -20,7 +20,7 @@ body {
     padding: 0 15px;
     text-align: right;
     background-color: #fff;
-    border: 1px solid gray;
+    /*border: 1px solid gray;*/
     color: rgba(0, 0, 0, 0.7);
     font-weight: 700;
     font-size: 40px;
@@ -44,6 +44,11 @@ body {
 .calculator-nums:hover{
     background-color: rgba(85, 85, 85, 0.8);
 }
+.calculator-math{
+    background-color: #f4e660;
+    border: 1px solid #f4e660;
+    color: rgba(0, 0, 0, 0.6);
+}
 .calculator-nums-empty{
     height: 60px;
     background-color: #555;
@@ -56,10 +61,8 @@ body {
 
 .calculator-delete{
     position: absolute;
-    border-radius: 50%;
     bottom: 6px;
     left: 2px;
-    background-color: #f4e660;
     width: 45px;
     height: 45px;
     font-size: 35px;
@@ -71,10 +74,8 @@ body {
 }
 .calculator-ac{
     position: absolute;
-    border-radius: 50%;
     bottom: 6px;
     right: -6px;
-    background-color: #f4e660;
     width: 45px;
     height: 45px;
     font-size: 25px;
@@ -99,8 +100,11 @@ body {
     cursor: pointer;
     color: rgba(0, 0, 0, 0.6);
 }
-.calculator-delete:hover,
-.calculator-ac:hover,
+
 .calculator-check:hover{
     background-color: #dccd4d;
+}
+.calculator-math:hover{
+    background-color: #dccd4d;
+    border: 1px solid #dccd4d;
 }
